@@ -1,10 +1,8 @@
-import Image from 'next/image'
+"use client";
+
+import { useSession } from "next-auth/react";
 
 export default function Home() {
-  return (
-    <div>
-      <h1>Hello world!</h1>
-      <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-    </div>
-  )
+  const {data} = useSession()
+  return <div></div>;
 }
