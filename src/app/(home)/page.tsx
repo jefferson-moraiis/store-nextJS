@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Categories from "./components/categories";
 
 export default function Home() {
   const {data} = useSession()
@@ -15,6 +16,9 @@ export default function Home() {
         sizes="100vw"
         className="h-auto w-full"
       />
+      <div className="mt-8">
+         <Categories />
+      </div>
     </div>
   )
 }
