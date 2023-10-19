@@ -90,9 +90,16 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: mouses,
-    });
+    const createMouses = mouses.map((mouse)=>{
+        prisma.product.create({
+          data: mouse
+        })
+    })
+
+    Promise.all(createMouses);
+    // await prisma.product.createMany({
+    //   data: mouses,
+    // });
 
     const keyboardsCategory = await prisma.category.create({
       data: {
@@ -195,9 +202,17 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: keyboards,
-    });
+    const createKeyboards = keyboards.map((keyboard)=>{
+        prisma.product.create({
+          data: keyboard
+        })
+    })
+    Promise.all(createKeyboards);
+    
+
+    // await prisma.product.createMany({
+    //   data: keyboards,
+    // });
 
     const headphonesCategory = await prisma.category.create({
       data: {
@@ -300,9 +315,17 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: headphones,
-    });
+    const createHeadPhones = headphones.map((headphone)=>{
+        prisma.product.create({
+          data: headphone
+        })
+    })
+
+    Promise.all(createHeadPhones);
+
+    // await prisma.product.createMany({
+    //   data: headphones,
+    // });
 
     const mousepadsCategory = await prisma.category.create({
       data: {
@@ -405,9 +428,16 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: mousepads,
-    });
+    const createMousePads = mousepads.map((mousepad)=>{
+        prisma.product.create({
+          data: mousepad
+        })
+    })
+
+    Promise.all(createMousePads);
+    // await prisma.product.createMany({
+    //   data: mousepads,
+    // });
 
     const monitorsCategory = await prisma.category.create({
       data: {
@@ -510,9 +540,16 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: monitors,
-    });
+    const createMonitors = monitors.map((monitor)=>{
+        prisma.product.create({
+          data: monitor
+        })
+    })
+
+    Promise.all(createMonitors);
+    // await prisma.product.createMany({
+    //   data: monitors,
+    // });
 
     const speakersCategory = await prisma.category.create({
       data: {
@@ -615,9 +652,17 @@ async function main() {
       },
     ];
 
-    await prisma.product.createMany({
-      data: speakers,
-    });
+    const createSpeakers = speakers.map((speaker)=>{
+        prisma.product.create({
+          data: speaker
+        })
+    })
+
+    Promise.all(createSpeakers);
+
+    // await prisma.product.createMany({
+    //   data: speakers,
+    // });
 
     console.log("Seed completed successfully");
   } catch (error) {
